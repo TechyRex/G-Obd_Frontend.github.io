@@ -1,0 +1,1067 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.151);
+  background-color: #f8f9fa;
+  width: 85%;
+  position: fixed;
+  right: 0%;
+  top: 0%;
+  height: 4em;
+  z-index: 2;
+  box-shadow: 0 0 20px black;
+}
+.header .res {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.header .res .header-search {
+  margin-left: 2em;
+}
+.header .sideBar .header-search {
+  display: none;
+}
+.header .open {
+  display: none;
+  background: #000000;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+@media (max-width: 768px) {
+  .header .open {
+    display: block;
+  }
+}
+.header .header-search {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 5em;
+}
+.header .header-search input {
+  width: 30em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: transparent;
+}
+.header .header-right {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.header .header-right .notification-icon {
+  margin-right: 8px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.151);
+  border-radius: 50%;
+  padding: 10px;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.header .header-right .admin-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 16em;
+}
+.header .header-right .admin-data .left {
+  border: 1px solid rgba(0, 0, 0, 0.151);
+  padding: 10px;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.header .header-right .admin-data .right {
+  width: 80%;
+  height: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header .header-right .admin-data .right .name {
+  font-weight: bold;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.3019607843);
+  margin: 20px 0;
+  margin-right: 2em;
+}
+
+.separator {
+  margin: 0 5px;
+}
+
+.active {
+  font-weight: bold; /* Example styling for the active breadcrumb */
+  color: black; /* Change to your preferred active color */
+}
+
+.sideBar {
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  width: 15%;
+  height: 100vh;
+  font-family: sans-serif;
+  font-size: 14px;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  z-index: 2;
+  box-shadow: 0 0 20px rgb(22, 22, 22);
+}
+.sideBar .close {
+  background-color: rgb(6, 6, 124);
+  color: white;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  right: -20%; /* Adjust as needed for your design */
+  transform: translateY(-50%);
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+.sideBar .header-logo {
+  background: rgb(6, 6, 124);
+  width: 100%;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.5em;
+}
+.sidebar-logo {
+  height: 40px; /* Adjust this value to control size */
+  width: auto;
+  object-fit: contain;
+}
+
+.sideBar .header-search {
+  width: 100%;
+}
+.sideBar .header-search input {
+  width: 90%;
+}
+.sideBar ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  width: 100%;
+}
+.sideBar ul li {
+  display: inline;
+  margin-bottom: 5px;
+}
+.sideBar ul li a {
+  text-decoration: none;
+  color: rgb(6, 6, 124);
+  font-size: 12px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 10px;
+}
+.sideBar ul li:hover {
+  border-left: 2px solid rgb(6, 6, 124);
+  font-weight: bold;
+}
+.sideBar ul li.messages {
+  display: flex;
+}
+.sideBar ul li.messages span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: rgb(255, 38, 0);
+  color: white;
+  margin-right: 5px;
+  font-weight: bold;
+}
+.sideBar .logout {
+  position: absolute;
+  bottom: 10%;
+  font-size: 10px;
+  color: rgb(255, 51, 0);
+  font-size: 12px;
+  display: block;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.container {
+  width: 84.8%;
+  position: absolute;
+  right: 0%;
+  top: 14%;
+  overflow-x: auto;
+  font-family: sans-serif;
+}
+.container .section1 {
+  border: 1px solid rgba(1, 1, 8, 0.185);
+  padding: 10px;
+}
+.container .section1 .head {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+}
+.container .section1 .metrics {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between items */
+  align-items: center; /* Center items vertically */
+}
+.container .section1 .value {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  height: 6em;
+  background-color: rgba(0, 0, 0, 0.0823529412);
+  position: relative;
+  transition: background-color 0.3s; /* Optional: Smooth background change */
+}
+.container .section1 .value .num {
+  margin-top: 5px;
+  display: block;
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+  bottom: 1%;
+  margin: 10px;
+}
+.container .section1 .active {
+  background: rgb(27, 27, 75);
+  color: white;
+  font-weight: bold;
+}
+.container .section1 .active_gobd {
+  background: rgb(255, 186, 96);
+  color: rgb(27, 27, 75);
+  font-weight: bold;
+}
+.container .section2 {
+  width: 100%;
+  height: 20em;
+  display: flex;
+  padding: 10px;
+}
+@media (max-width: 611px) {
+  .container .section2 {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+.container .section2 .chartsCont {
+  width: 60%;
+  height: 100%;
+  min-width: 50%;
+  font-size: 13px;
+}
+@media (max-width: 611px) {
+  .container .section2 .chartsCont {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.container .section2 .individualsCont {
+  width: 35%;
+}
+@media (max-width: 611px) {
+  .container .section2 .individualsCont {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.container .section2 .individualsCont table {
+  border: 1px solid black;
+  width: 100%;
+  border-collapse: collapse;
+  margin-left: 1em;
+  font-size: 13px;
+}
+.container .section2 .individualsCont table th,
+.container .section2 .individualsCont table td {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.596);
+  padding: 15px;
+}
+.container .section3 {
+  overflow: auto;
+}
+.container .section3 h2 {
+  font-size: 18px;
+  padding: 10px;
+}
+.container .section3 table {
+  border: 1px solid black;
+  width: 100%;
+  border-collapse: collapse;
+  margin-left: 1em;
+  font-size: 13px;
+}
+@media (max-width: 611px) {
+  .container .section3 table {
+    width: 50em;
+  }
+}
+.container .section3 table th,
+.container .section3 table td {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.596);
+  padding: 15px;
+}
+.container .containerSupport .tableSection {
+  overflow: auto;
+}
+.container .containerSupport .head {
+  padding: 10px;
+  font-weight: bold;
+}
+.container .containerSupport table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 1em;
+  font-size: 13px;
+}
+@media (max-width: 611px) {
+  .container .containerSupport table {
+    width: 50em;
+  }
+}
+.container .containerSupport table th,
+.container .containerSupport table td {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.596);
+  padding: 7px;
+  text-align: left;
+}
+.container .containerSupport table th {
+  background-color: rgb(179, 179, 179);
+  color: white;
+}
+.container .containerSupport table .low {
+  background-color: rgba(0, 0, 0, 0.199);
+  color: black;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4px;
+  margin: 4px;
+  text-align: center;
+  border-radius: 5px;
+}
+.container .containerSupport table .medium {
+  background-color: rgba(195, 216, 5, 0.493);
+  color: rgb(136, 136, 9);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4px;
+  margin: 4px;
+  text-align: center;
+  border-radius: 5px;
+}
+.container .containerSupport table .high {
+  background-color: rgba(238, 14, 14, 0.199);
+  color: red;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4px;
+  margin: 4px;
+  text-align: center;
+  border-radius: 5px;
+}
+.container .containerSupport table .action {
+  text-align: center;
+}
+.container .containerMessages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 13px;
+}
+.container .containerMessages .headerSection {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  color: rgba(43, 42, 42, 0.212);
+}
+.container .containerMessages .headerSection .dm,
+.container .containerMessages .headerSection .notifications {
+  margin-right: 1em;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.1s ease-in-out;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+.container .containerMessages .headerSection .active {
+  color: rgb(0, 0, 0);
+}
+.container .containerMessages .headerSection .dm:hover {
+  background: rgb(6, 6, 124);
+  color: white;
+}
+.container .containerMessages .headerSection .notifications:hover {
+  background: rgb(6, 6, 124);
+  color: white;
+}
+.container .containerMessages .messageSection {
+  display: flex;
+}
+.container .containerMessages .messageSection .messageList,
+.container .containerMessages .messageSection .chatSection {
+  border: 1px solid rgba(0, 0, 0, 0.096);
+  font-size: 13px;
+}
+.container .containerMessages .messageSection .messageList {
+  border-right: none;
+}
+.container .containerMessages .messageSection .messageList {
+  width: 30%;
+  max-height: 25em;
+  overflow: auto;
+}
+.container .containerMessages .messageSection .messageList .details .indiv {
+  border: 1px solid rgba(0, 0, 0, 0.068);
+  display: flex;
+  align-items: center;
+  color: rgb(160, 160, 160);
+  font-size: 11px;
+  padding: 5px;
+  position: relative;
+  width: 100%;
+}
+.container .containerMessages .messageSection .messageList .details .indiv .image {
+  margin: 5px;
+}
+.container .containerMessages .messageSection .messageList .details .indiv .image img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+}
+.container .containerMessages .messageSection .messageList .details .indiv .other .name {
+  font-weight: bold;
+}
+.container .containerMessages .messageSection .messageList .details .indiv .other .messageDetails {
+  letter-spacing: 1px;
+}
+.container .containerMessages .messageSection .messageList .details .indiv .num {
+  position: absolute;
+  top: -50;
+  right: -50;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7em;
+  height: 1.7em;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: rgb(255, 38, 0);
+  color: white;
+  font-weight: bold;
+}
+.container .containerMessages .messageSection .messageList .details .indiv:hover {
+  background: rgb(6, 6, 124);
+  color: white;
+  transition: 0.1s ease-in-out;
+}
+.container .containerMessages .messageSection .chatSection {
+  width: 50%;
+}
+@media (max-width: 611px) {
+  .container .containerMessages .messageSection .chatSection {
+    width: 80%;
+  }
+}
+.container .containerMessages .messageSection .chatSection .chatCont {
+  height: 25em;
+  overflow-y: auto;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender,
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .reciever {
+  width: 100%;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender {
+  padding: 5px;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender .senderInner {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender .senderInner .message {
+  max-width: 70%;
+  background: rgb(6, 6, 124);
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: inline-block;
+  word-wrap: break-word;
+  text-align: left;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender .senderInner2 {
+  max-width: 19em;
+  font-size: 13px;
+  font-family: sans-serif;
+  padding: 10px; /* Inner padding */
+  border-radius: 8px; /* Rounded corners */
+  height: -moz-fit-content;
+  height: fit-content;
+  display: inline-block;
+  word-wrap: break-word;
+  text-align: left;
+  color: white;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 5px rgba(111, 226, 178, 0.1); /* Subtle shadow */
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender .senderInner2 .sendBut {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  background: #051c35;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.171);
+  color: white;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender .senderInner2 .files {
+  width: 17em;
+  border: 1px solid rgb(94, 167, 151);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender .senderInner2 .files .file {
+  width: 5em;
+  display: block;
+  border: 1px solid rgba(50, 58, 50, 0.048);
+  margin: 3px;
+  background-color: rgba(40, 80, 67, 0.5137254902);
+  border-radius: 5px;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender .senderInner2 .files .file .img {
+  width: 100%;
+  height: 100%;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .sender .senderInner2 .files .vid {
+  width: 100%;
+  height: 10em;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .reciever {
+  padding: 5px;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .reciever .recieverInner {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.container .containerMessages .messageSection .chatSection .chatCont .messageSection .reciever .recieverInner .message {
+  max-width: 70%;
+  background: rgba(49, 49, 49, 0.103);
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: inline-block;
+  word-wrap: break-word;
+  text-align: left;
+}
+.container .containerMessages .messageSection .chatSection .inputSection {
+  border-top: 1px solid rgba(0, 0, 0, 0.199);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .containerMessages .messageSection .chatSection .inputSection #file {
+  margin: 5px;
+}
+.container .containerMessages .messageSection .chatSection .inputSection #text {
+  width: 75%;
+  padding: 10px;
+  border: none;
+}
+.container .containerMessages .messageSection .chatSection .inputSection button {
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  color: white;
+  background: rgb(9, 16, 109);
+  border-radius: 5px;
+}
+.container .containerMessages .messageSection .chatDetails {
+  width: 25%;
+}
+@media (max-width: 611px) {
+  .container .containerMessages .messageSection .chatDetails {
+    display: none;
+  }
+}
+.container .containerMessages .messageSection .chatDetails .userIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10em;
+}
+.container .containerMessages .messageSection .chatDetails .userIntro img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.521);
+}
+.container .containerMessages .messageSection .chatDetails .userIntro .name {
+  font-weight: bold;
+}
+.container .containerMessages .messageSection .chatDetails .userOther .indiv {
+  border: 1px solid rgba(0, 0, 0, 0.158);
+  padding: 10px;
+}
+.container .containerMessages .messageSection .chatDetails .userOther .title {
+  font-weight: bold;
+}
+.container .containerIndividuals .tableSection {
+  overflow: auto;
+}
+.container .containerIndividuals table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-left: 1em;
+  font-size: 13px;
+}
+@media (max-width: 669px) {
+  .container .containerIndividuals table {
+    width: 60em;
+    overflow: auto;
+  }
+}
+.container .containerIndividuals table th,
+.container .containerIndividuals table td {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.596);
+  padding: 10px;
+}
+.container .containerIndividuals table th {
+  background-color: rgb(179, 179, 179);
+  color: white;
+}
+.container .containerIndividuals .section1 {
+  border: none;
+}
+.container .containerRequest .head {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+  border: 1px solid rgba(1, 1, 8, 0.185);
+  padding: 10px;
+}
+.container .containerRequest .others {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.container .containerRequest .left {
+  width: 50%;
+  font-size: 13px;
+  margin-left: 1em;
+}
+.container .containerRequest .left .requestSummary {
+  width: 100%;
+  font-size: 13px;
+  margin-top: 15px;
+}
+.container .containerRequest table {
+  border: 1px solid black;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.container .containerRequest table th,
+.container .containerRequest table td {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  color: rgba(0, 0, 0, 0.596);
+  padding: 10px;
+}
+.container .containerRequest table th {
+  background-color: rgb(179, 179, 179);
+  color: white;
+  position: sticky;
+  top: 15%;
+  text-align: left;
+}
+.container .containerRequest .right {
+  border-left: 1px solid black;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+}
+.container .containerRequest .right .requestIntro {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  margin-top: 3em;
+}
+.container .containerRequest .right .requestIntro .img img {
+  border: 1px solid black;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  padding: 10px;
+}
+.container .containerRequest .right .requestOther {
+  padding: 20px;
+  width: 100%;
+}
+.container .containerRequest .right .requestOther .indiv {
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-size: 13px;
+}
+.container .containerRequest .right .requestOther .indiv:last-child {
+  border-bottom: 1px solid black;
+}
+.container .containerRequest .right .reviews {
+  margin-top: 10px;
+  height: 15em;
+  overflow: auto;
+  position: relative;
+  padding: 20px;
+}
+.container .containerRequest .right .reviews .revHead {
+  width: 100%;
+  padding: 5px;
+  position: sticky;
+  top: 0%;
+  font-size: 13px;
+  background-color: rgba(26, 26, 26, 0.137);
+}
+.container .containerRequest .right .reviews .indiv {
+  font-size: 13px;
+  margin-top: 5px;
+}
+.container .containerRequest .right .reviews .indiv .review {
+  word-spacing: 2px;
+}
+.container .containerRequest .right .reviews .indiv .author {
+  text-align: right;
+}
+.container .biggerPic {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.container .biggerPic .img {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding-top: 4em;
+  position: absolute;
+}
+@media (min-width: 768px) {
+  .container .biggerPic .img {
+    width: 30%;
+  }
+}
+.container .biggerPic .img img {
+  width: 100%;
+  height: 80%;
+}
+.container .biggerPic .biggerPicWrapper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background: rgba(0, 0, 0, 0.904);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px;
+  }
+  .header .res {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .header .res .header-search {
+    display: none;
+  }
+  .header .res .header-right .admin-data {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .header .sideBar {
+    width: 50%;
+    background: white;
+    left: -200%;
+    transition: 0.1s ease-in-out;
+  }
+  .header .sideBar .header-search {
+    display: block;
+  }
+  .header .sideBar .close {
+    background-color: rgb(6, 6, 124);
+    color: white;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    right: -10%; /* Adjust as needed for your design */
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+  }
+  .header .openUp {
+    left: 0%; /* Change the right position when open */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 0%;
+    top: 14%;
+    overflow-x: hidden;
+  }
+}
+.signup-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 12px;
+  background: rgba(42, 0, 231, 0.137);
+  background: url(../public/image_asoroauto.webp), rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+.signup-container .inner {
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  background: rgba(1, 7, 59, 0.068);
+}
+@media (max-width: 768px) {
+  .signup-container .inner {
+    min-width: 23em;
+  }
+}
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.signup-container .form-group {
+  margin-bottom: 15px;
+}
+.signup-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.signup-container .form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.685);
+}
+.signup-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.signup-container button:hover {
+  background-color: darkblue;
+}
+.signup-container .error {
+  color: red;
+  margin-bottom: 15px;
+}
+.signup-container .success {
+  color: green;
+  margin-bottom: 15px;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 14px;
+  background: rgba(42, 0, 231, 0.137);
+  background: url(../public/image_asoroauto.webp), rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+.login-container .inner {
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  background: rgba(1, 7, 59, 0.068);
+}
+@media (max-width: 768px) {
+  .login-container .inner {
+    min-width: 23em;
+  }
+}
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.login-container .form-group {
+  margin-bottom: 15px;
+}
+.login-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.login-container .form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.685);
+}
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 255, 0.397);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.login-container button:hover {
+  background-color: rgba(0, 0, 139, 0.582);
+}
+.login-container .error {
+  color: red;
+  margin-bottom: 15px;
+}
+.login-container .success {
+  color: green;
+  margin-bottom: 15px;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.2862745098);
+  height: 100vh;
+}
+.loading-spinner .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=styles.css.map */
